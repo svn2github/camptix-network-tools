@@ -215,7 +215,7 @@ class CampTix_Network_Dashboard {
 	}
 
 	function admin_menu() {
-		$dashboard = add_dashboard_page( 'CampTix Network Dashboard', 'CampTix', 'network_admin', 'camptix-dashboard', array( $this, 'render_dashboard' ) );
+		$dashboard = add_dashboard_page( 'CampTix Network Dashboard', 'CampTix', 'manage_network', 'camptix-dashboard', array( $this, 'render_dashboard' ) );
 		add_action( 'load-' . $dashboard, array( $this, 'pre_render_dashboard' ) );
 	}
 
