@@ -33,8 +33,8 @@ class CampTix_Network_Attendees_List_Table extends WP_List_Table {
 				break;
 			
 			switch_to_blog( $bid );
-			
-				if ( in_array( 'camptix/camptix.php', (array) apply_filters( 'active_plugins', get_option( 'active_plugins', array() ) ) ) ) {
+
+			if ( is_plugin_active( 'camptix/camptix.php') ) {
 					$paged = 1;
 					while ( $attendees = get_posts( array(
 						'paged' => $paged++,
