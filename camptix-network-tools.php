@@ -169,8 +169,8 @@ class CampTix_Network_Tools {
 			$entry['edit_post_link'] = esc_url_raw( add_query_arg( array( 'post' => absint( $post_id ), 'action' => 'edit' ), admin_url( 'post.php' ) ) );
 		}
 
-		// Error-log log
-		if ( isset( $entry['message'] ) ) {
+		// (optional) Also write the message to the standard log file
+		if ( isset( $entry['message'] ) && apply_filters( 'camptix_nt_file_log', true ) ) {
 			$url = parse_url( home_url() );
 			$prefix = sprintf( 'CampTix (%s): ', $url['host'] );
 			error_log( $prefix . $entry['message'] );
