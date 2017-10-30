@@ -140,6 +140,10 @@ class CampTix_Network_Tools {
 	function camptix_log_raw( $message, $post_id, $data_raw, $section = 'general' ) {
 		global $wpdb, $blog_id, $camptix;
 
+		if ( is_null( $post_id ) ) {
+			$post_id = 0;
+		}
+
 		$data = json_encode( stripslashes_deep( $data_raw ) );
 		$json_last_error = json_last_error();
 		if ( JSON_ERROR_NONE != $json_last_error ) {
