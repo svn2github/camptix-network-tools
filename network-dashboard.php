@@ -269,7 +269,6 @@ class CampTix_Network_Dashboard {
 	function render_dashboard() {
 		?>
 		<div class="wrap">
-			<?php screen_icon( 'tools' ); ?>
 			<h1>CampTix Network Dashboard</h1>
 			<?php settings_errors(); ?>
 			<h3 class="nav-tab-wrapper"><?php $this->render_dashboard_tabs(); ?></h3>
